@@ -22,11 +22,11 @@ export default function App() {
   const makeYoutubeRequest = async () => {
     const myHttpRequest = new XMLHttpRequest();
     if (!myHttpRequest) {
-      console.log("Giving up :( Cannot create an XMLHTTP instance");
+      console.log("Giving up : Cannot create an XMLHTTP instance");
       return false;
     }
 
-    myHttpRequest.onreadystatechange = (e) => {
+    myHttpRequest.onreadystatechange = () => {
       if (myHttpRequest.readyState !== 4) {
         return;
       }
