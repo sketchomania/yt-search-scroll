@@ -1,10 +1,14 @@
 import * as React from "react";
-import { View, Text } from "react-native";
+import { View, Button, Text } from "react-native";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
+      <Button
+        title="Go to Search"
+        onPress={() => navigation.navigate("Search")}
+      />
     </View>
   );
 };
