@@ -22,15 +22,17 @@ const styles = StyleSheet.create({
   backgroundStyle: {
     backgroundColor: "#F0EEEE",
     height: 50,
-    borderRadius: 5,
+    borderRadius: 8,
     marginHorizontal: 15,
     flexDirection: "row",
     marginTop: 10,
+    marginBottom: 10,
   },
   iconStyle: {
     fontSize: 35,
     alignSelf: "center",
     marginHorizontal: 10,
+    color: "gray",
   },
   inputStyles: {
     flex: 1,
