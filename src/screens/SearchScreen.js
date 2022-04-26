@@ -60,7 +60,7 @@ const SearchScreen = ({ navigation }) => {
       </View>
     );
   };
-  console.log("line 99:", inputTerm);
+  // console.log("line 63:", inputTerm);
 
   const handleLoadMore = () => {
     console.log("loading more results ... ");
