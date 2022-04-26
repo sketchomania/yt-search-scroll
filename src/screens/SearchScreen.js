@@ -38,8 +38,8 @@ const SearchScreen = ({ navigation }) => {
         const json = JSON.parse(response);
         setData([...data, ...json.items]);
         setNextPageToken(json.nextPageToken);
-        console.log("\n  pageToken😏: ", nextPageToken);
-        console.log("\n data[] (json.items)😏: \n", "data: ", data);
+        // console.log("\n  pageToken😏: ", nextPageToken);
+        // console.log("\n data[] (json.items)😏: \n", "data: ", data);
       } else {
         console.log(
           "There was a problem with the request.\nSome error occured 😐"
