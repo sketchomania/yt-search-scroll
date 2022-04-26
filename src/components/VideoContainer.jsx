@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
 import {
   StyleSheet,
   Text,
   Image,
   View,
-  Button,
-  FlatList,
   TouchableOpacity,
 } from "react-native";
 
