@@ -38,7 +38,7 @@ const SearchScreen = () => {
         setData([...data, ...json.items]);
         setNextPageToken(json.nextPageToken);
         console.log("\n  pageToken😏: ", nextPageToken);
-        console.log("\n data[] (json.items)😏: \n", "data: ", data);
+        // console.log("\n data[] (json.items)😏: \n", "data: ", data);
       } else {
         console.log(
           "There was a problem with the request.\nSome error occured 😐"
@@ -59,7 +59,7 @@ const SearchScreen = () => {
       </View>
     );
   };
-  console.log("line 63:", inputTerm);
+  // console.log("line 63:", inputTerm);
 
   const handleLoadMore = () => {
     console.log("loading more results ... ");
