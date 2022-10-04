@@ -1,15 +1,22 @@
-import { NavigationContainer } from "@react-navigation/native";
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
 
 import HomeScreen from "./src/screens/HomeScreen";
 import SearchScreen from "./src/screens/SearchScreen";
+import { useColorScheme } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const scheme = useColorScheme();
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={scheme === "dark" ? DarkTheme : DefaultTheme}>
       <Tab.Navigator
         screenOptions={{
           headerShown: false,

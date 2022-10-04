@@ -1,10 +1,20 @@
 import * as React from "react";
 import { View, Button, Image, Text, StyleSheet } from "react-native";
+import { useTheme } from "@react-navigation/native";
 
 const HomeScreen = ({ navigation }) => {
+  const { colors } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <View style={[styles.card, styles.elevation]}>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <View
+        style={[
+          styles.card,
+          styles.elevation,
+          { backgroundColor: colors.card },
+          { shadowColor: colors.text },
+        ]}
+      >
         <View>
           <Image
             source={require("../../assets/youtube-icon.jpg")}
@@ -15,14 +25,20 @@ const HomeScreen = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.textContainer}>
-          <Text style={{ color: "#000", fontSize: 20 }}>Youtube Search</Text>
-          <Text></Text>
-          <Text style={styles.card_description}>
-            😃 Infinite scroll feature 🔥
+          <Text style={{ color: colors.text, fontSize: 20 }}>
+            Youtube Search
           </Text>
           <Text></Text>
-          <Text style={styles.card_description}>
-            😃 Bottom tab navigation 🔥
+          <Text style={[styles.card_description, { color: colors.text }]}>
+            📌 Infinite scroll feature
+          </Text>
+          <Text></Text>
+          <Text style={[styles.card_description, { color: colors.text }]}>
+            🟤 Bottom tab navigation
+          </Text>
+          <Text></Text>
+          <Text style={[styles.card_description, { color: colors.text }]}>
+            🔥 Theme based background
           </Text>
         </View>
       </View>
@@ -40,20 +56,17 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
     marginTop: 20,
   },
   card: {
-    backgroundColor: "#eee",
     borderRadius: 10,
     overflow: "hidden",
     margin: 40,
   },
   elevation: {
     elevation: 20,
-    shadowColor: "#52006A",
   },
   textContainer: {
     alignItems: "center",
@@ -77,7 +90,6 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 10,
   },
   card_description: {
-    color: "#777",
     paddingTop: 5,
   },
 });
