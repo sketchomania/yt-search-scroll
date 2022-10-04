@@ -45,22 +45,27 @@ npm start
 - React Native expo app
 - Get Search results from youtube
 - Infinite scroll feature
+- Background based on device theme
 - Bottom Navigator for navigation
 
 ## :star: Demo :-
 
+### Web
+
+<div style="display: flex; margin: 1rem; justify-content: space-around; flex-wrap: wrap"><img src="assets/web-view.png" alt="wev view" width="500"></div>
+
 ### Home Page
 
 <div style="display: flex; margin: 1rem; justify-content: space-around; flex-wrap: wrap">
- <img src="assets/home_page.jpg"  width="250">
- <img src="assets/search_page.jpg"  width="250">
+ <img src="assets/home_page.jpg" alt="mobile homescreen"  width="250">
+ <img src="assets/search_page.jpg" alt="mobile search screen initial"  width="250">
 </div>
 
 ### Search Results
 
 <div style="display: flex; margin: 1rem; justify-content: space-around; flex-wrap: wrap">
- <img src="assets/search_result.jpg"  width="250">
- <img src="assets/infinite_scroll.jpg"  width="250">
+ <img src="assets/search_result.jpg" alt="search result screen"  width="250">
+ <img src="assets/infinite_scroll.jpg" alt="search result infinite scroll"  width="250">
 </div>
 
 ## :star: Contributing
