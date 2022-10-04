@@ -8,15 +8,18 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
+import { useTheme } from "@react-navigation/native";
 import { BASE_URL, API_KEY } from "@env";
 
 import SearchBar from "../components/SearchBar";
 import VideoContainer from "../components/VideoContainer";
+import { globalStyles } from "../../constants/styles";
 
 const SearchScreen = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [nextPageToken, setNextPageToken] = useState("");
+  const { colors } = useTheme();
 
   const [inputTerm, setInputTerm] = useState("");
 
@@ -68,8 +71,9 @@ const SearchScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      {/* <Text>😃 Search result from youtube 🔥</Text> */}
+    <View
+      style={[globalStyles.container, { backgroundColor: colors.background }]}
+    >
       <SearchBar
         inputTerm={inputTerm}
         onInputTermChange={(inputTerm) => {
@@ -82,7 +86,20 @@ const SearchScreen = ({ navigation }) => {
 
       <View style={styles.resultContainer}>
         {isLoading ? (
-          <ActivityIndicator />
+          <>
+            <ActivityIndicator />
+            {API_KEY ? (
+              <Text>{""}</Text>
+            ) : (
+              <>
+                <Text>{"\n"}</Text>
+                <Text>{"\n"}</Text>
+                <Text style={{ color: colors.text }}>
+                  {"🟤 Check your API_KEY is valid or not‼️"}
+                </Text>
+              </>
+            )}
+          </>
         ) : (
           <FlatList
             data={data}
@@ -103,13 +120,6 @@ const SearchScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-  },
   resultContainer: {
     flex: 1,
     // alignItems: "center",

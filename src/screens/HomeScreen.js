@@ -1,12 +1,13 @@
 import * as React from "react";
 import { View, Button, Image, Text, StyleSheet } from "react-native";
 import { useTheme } from "@react-navigation/native";
+import { globalStyles } from "../../constants/styles";
 
 const HomeScreen = ({ navigation }) => {
   const { colors } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
+    <View style={[globalStyles.container, { backgroundColor: colors.background }]}>
       <View
         style={[
           styles.card,
@@ -54,12 +55,6 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-  },
   card: {
     borderRadius: 10,
     overflow: "hidden",

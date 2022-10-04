@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  Image,
-  View,
-  Button,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
 
 const VideoContainer = ({ item }) => {
   return (
-    <TouchableOpacity style={styles.videoContainer}>
+    <TouchableOpacity
+      style={[styles.videoContainer, { backgroundColor: colors.card }]}
+    >
       <Image
         style={styles.videoThumbnail}
         source={{
@@ -20,7 +13,7 @@ const VideoContainer = ({ item }) => {
       />
       <View style={styles.textInfo}>
         <Text>{item.title}</Text>
-        <Text style={styles.channelName}>
+        <Text style={[styles.channelName, { color: colors.text }]}>
           {item.channelTitle}
           {"\n"}
         </Text>
@@ -33,7 +26,6 @@ const styles = StyleSheet.create({
   videoContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#DDDDDD",
     padding: 16,
   },
   videoThumbnail: {
@@ -45,7 +37,6 @@ const styles = StyleSheet.create({
   },
   channelName: {
     fontSize: 10,
-    color: "#696969",
   },
 });
 
